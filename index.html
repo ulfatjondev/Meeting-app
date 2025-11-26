@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ulfatjon Meeting App</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="src/icons/logo.jpg">
+  <meta name="theme-color" content="#0d1117">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header {
+      background: #161b22;
+      padding: 15px;
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1px solid #30363d;
+    }
+    #container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    footer {
+      background: #161b22;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      border-top: 1px solid #30363d;
+    }
+  </style>
+</head>
+<body>
+<header>
+  🔴 Ulfatjon Meeting App
+</header>
+<div id="container">
+  <iframe 
+    src="https://meet.jit.si/OuterPreferencesWalkVanishingly#config.startWithAudioMuted=true&config.startWithVideoMuted=true&interfaceConfig.TOOLBAR_BUTTONS=[]"
+    allow="camera; microphone; fullscreen; display-capture"
+  ></iframe>
+</div>
+<footer>
+  © 2025 Ulfatjon — Meeting Platform  
+</footer>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker ro‘yxatdan o‘tdi"))
+      .catch(err => console.log("SW xato:", err));
+  }
+</script>
+</body>
+</html>
